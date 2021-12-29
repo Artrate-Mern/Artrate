@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Artrate-Mern/Artrate/issues"
   },
-  "homepage": "https://github.com/Artrate-Mern/Artrate#readme"
+  "homepage": "https://github.com/Artrate-Mern/Artrate#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4"
+  }
 }
