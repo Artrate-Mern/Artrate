@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Artrate-Mern/Artrate/issues"
   },
-  "homepage": "https://github.com/Artrate-Mern/Artrate#readme"
+  "homepage": "https://github.com/Artrate-Mern/Artrate#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.0"
+  }
 }
