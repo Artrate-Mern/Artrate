@@ -12,11 +12,11 @@ mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
-
 const connection = mongoose.connection;
 connection.once("open", () =>
   console.log("MongoDB connection established seccessfully!")
 );
+const artworkRouter = require("./routes/Artworks");
+app.use("/Artworks", artworkRouter);
 
 app.listen(port, () => console.log(`The  ArtRate is running on Port: ${port}`));
