@@ -16,7 +16,7 @@ const connection = mongoose.connection;
 connection.once("open", () =>
   console.log("MongoDB connection established seccessfully!")
 );
-const artworkRouter = require("./routes/artworks");
+const artworkRouter = require("./controllers/Artwork_controllers");
 app.use("/artworks", artworkRouter);
 
 app.listen(port, () => console.log(`The  ArtRate is running on Port: ${port}`));
