@@ -8,5 +8,5 @@ const ArtworkSchema = new Schema(
   { timestamps: true }
 );
 
-const Artworks = mongoose.model("Artwork", ArtworkSchema);
-module.exports = Artworks;
+const Artwork = mongoose.model("Artwork", ArtworkSchema);
+module.exports = Artwork;
