@@ -42,7 +42,7 @@ const Artpiece = () => {
   if (!artPiece) return null;
   
   return(
-    <Box sx={{ maxWidth: 650, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: 650, flexGrow: 1, margin: "auto", boxShadow: 3, p: 4 }}>
       <Paper
         square
         elevation={0}
@@ -51,6 +51,7 @@ const Artpiece = () => {
           alignItems: 'center',
           height: 50,
           bgcolor: 'background.default',
+          pl: 3,
         }}
       >
         <Typography>{artPiece[activeStep].title}</Typography>
