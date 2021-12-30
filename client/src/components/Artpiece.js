@@ -1,4 +1,4 @@
-// use axios?
+import axios from "axios";
 
 const Artpiece = () => {
   return(
