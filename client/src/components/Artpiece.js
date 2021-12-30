@@ -42,7 +42,7 @@ const Artpiece = () => {
   if (!artPiece) return null;
   
   return(
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: 650, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
@@ -67,11 +67,13 @@ const Artpiece = () => {
               <Box
                 component="img"
                 sx={{
-                  height: 255,
+                  height: 650,
+                  objectFit: "contain",
                   display: 'block',
-                  maxWidth: 400,
+                  maxWidth: 650,
                   overflow: 'hidden',
                   width: '100%',
+
                 }}
                 src={step.image}
                 alt={step.title}
