@@ -9,4 +9,7 @@ const connection =  async () => {
   }
 };
 
+// TODO: GOOGLE THIS!
+mongoose.Promise = global.Promise;
+
 module.exports = connection;

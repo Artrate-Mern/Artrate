@@ -16,7 +16,7 @@ router.post(
   }
 );
 
-// Login POST request
+// FIXME Login POST request (https://www.digitalocean.com/community/tutorials/api-authentication-with-json-web-tokensjwt-and-passport)
 router.post(
   "/login",
   async(req, res, next) => {
@@ -26,7 +26,7 @@ router.post(
         try {
           if (err || !user) {
             const error = new Error("An error occured.");
-
+            console.log("LOGIN ROUTE", error)
             return next(error);
           }
           req.login(

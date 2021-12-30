@@ -25,7 +25,7 @@ app.use(express.json());
 // Auth Routes
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use("/", routes);
-app.use("/user", passport.authenticate('jwt', {session: false}), secureRoute);
+app.use("/user", passport.authenticate('jwt', { session: false }), secureRoute);
 
 const artworkRouter = require("./controllers/artwork_controller");
 app.use("/artworks", artworkRouter);
