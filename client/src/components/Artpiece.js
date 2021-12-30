@@ -84,6 +84,7 @@ const Artpiece = () => {
         ))}
       </SwipeableViews>
       <MobileStepper
+        variant="progress"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
