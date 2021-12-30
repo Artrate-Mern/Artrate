@@ -3,7 +3,7 @@ import Artpiece from "../../components/Artpiece";
 
 const Artworks = () => {
   return(
-    <div id="artworks">
+    <div id="works">
       <Header title="Feed" />
       <Artpiece />
     </div>
