@@ -11,13 +11,13 @@ const ArtworkSchema = new Schema(
       type: String, 
       required: [true, 'Please upload an image.'] 
     },
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    },
+    // user: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "User"
+    // },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Artwork", ArtworkSchema);
-
+const Artwork = mongoose.model("Artwork", ArtworkSchema);
+module.exports = Artwork;
