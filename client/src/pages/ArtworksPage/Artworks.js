@@ -1,10 +1,10 @@
-import Header from '../../components/Header';
-import Artpiece from '../../components/Artpiece';
+import Header from "../../components/Header";
+import Artpiece from "../../components/Artpiece";
 
 const Artworks = () => {
   return(
-    <div id='artworks'>
-      <Header title='Feed' />
+    <div id="works">
+      <Header title="Feed" />
       <Artpiece />
     </div>
   )
