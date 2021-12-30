@@ -1,6 +1,5 @@
 const express = require("express");
 const multer = require("multer");
-const router = require("multer");
 const Artwork = require("../models/Artwork");
 const router = express.Router();
 
@@ -12,8 +11,6 @@ const storage = multer.diskStorage({
     callback(null, file.originalname);
   },
 });
-const upload = multer({ storage: storage });
-
 const upload = multer({ storage: storage });
 // Request for all art work
 router.get("/", async (req, res) => {
