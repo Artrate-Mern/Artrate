@@ -2,8 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ArtworkSchema = new Schema(
   {
-    title: { type: String, required: true },
-    image: { type: String, required: true },
+    title: { 
+      type: String, 
+      required: [true, 'Please add a title.']
+    },
+    image: { 
+      type: String, 
+      required: [true, 'Please upload an image.'] 
+    },
   },
   { timestamps: true }
 );
