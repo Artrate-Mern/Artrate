@@ -16,33 +16,31 @@ const upload = multer({ storage: storage });
 router.get("/", async (req, res) => {
   try {
     const artworks = await Artwork.find();
-    return res.status(200).json(artworks)
-
+    return res.status(200).json(artworks);
   } catch (err) {
     return res.status(500).json(`Error: ${err}`);
   }
 });
 
-// Add new Artwork
-// router.post("/new", upload.single("image"), async (req, res) => {
+// //Add new Artwork
+// router.post("/new", async (req, res) => {
 //   try {
 //     const newArtwork = await Artwork.create(req.body);
-//     return res.status(201).json("New Artwork Posted")
-
+//     return res.status(201).json("New Artwork Posted");
 //   } catch (err) {
 //     return res.status(400).json(`Error: ${err}`);
 //   }
 // });
 
-router.post("/new", upload.single("artImage"), (req, res) => {
+router.post("/new",upload.single("image"), (req, res) => {
   const newArtwork = new Artwork({
     title: req.body.title,
-    Image: req.file.originalname,
+    image: req.file.originalname,
   });
 
-  newArticle
+  newArtwork
     .save()
-    .then(() => res.json("New Article posted!"))
+    .then(() => res.json("New artwork posted!"))
     .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
@@ -51,9 +49,8 @@ router.get("/:id", async (req, res) => {
   try {
     const artwork = await Artwork.findById(req.params.id);
     return res.status(200).json(artwork);
-
   } catch (err) {
-    return res.status(500).json(`Error: ${err}`)
+    return res.status(500).json(`Error: ${err}`);
   }
 });
 
