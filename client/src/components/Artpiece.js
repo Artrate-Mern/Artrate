@@ -42,6 +42,7 @@ const Artpiece = () => {
 
   if (!artPiece) return null;
 
+  let artpieceName = artPiece[activeStep].title;
   let artpieceId = artPiece[activeStep]['_id'];
   
   return(
@@ -135,7 +136,7 @@ const Artpiece = () => {
         />
       </Box>
 
-      <FeedbackForm artpieceId={artpieceId} />
+      <FeedbackForm artpieceId={artpieceId} artpieceName={artpieceName} />
     </div>
   )
 }

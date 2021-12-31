@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-const FeedbackForm = ({ artpieceId }) => {
+const FeedbackForm = ({ artpieceId, artpieceName }) => {
   const [ratingValue, setRatingValue] = useState(1);
   const [feedbackValue, setFeedbackValue] = useState('');
 
@@ -30,53 +30,60 @@ const FeedbackForm = ({ artpieceId }) => {
   }
 
   return(
-    <form onSubmit={handleSubmit} >
-      
-      <Box sx={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'minmax(450px, 650px)', 
-        justifyContent: 'center',
-        gap: 5,
-        my: 4,
-        }}>
+    <>
+      <Typography variant="h4" component="div" gutterBottom sx={{ textAlign: 'center', mt: 6 }}>
+        Submit your feedback on <em>{artpieceName}</em>.
+      </Typography>
 
-        {/* Star rating */}
-        <Box
-          sx={{
-            '& > legend': { mt: 1 },
-          }}
-        >
-          <Typography component="legend">Rating</Typography>
-          <Rating
-            name="simple-controlled"
-            value={ratingValue}
-            onChange={(event, newValue) => {
-              setRatingValue(newValue);
+      <form onSubmit={handleSubmit} >
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'minmax(450px, 650px)', 
+          justifyContent: 'center',
+          gap: 5,
+          my: 4,
+          }}>
+
+          {/* Star rating */}
+
+          <Box
+            // sx={{
+            //   '& > legend': { mt: 1 },
+            // }}
+          >
+            <Typography component="legend">Rating</Typography>
+            <Rating
+              name="simple-controlled"
+              value={ratingValue}
+              onChange={(event, newValue) => {
+                setRatingValue(newValue);
+              }}
+            />
+          </Box>
+
+          {/* Feedback */}
+          
+          <Box
+            sx={{
+              '& .MuiTextField-root': { width: '100%'},
             }}
-          />
+            noValidate
+            autoComplete="off"
+          >
+            <Typography component="legend">Feedback</Typography>
+            <TextField
+              id="filled-multiline-static"
+              label="How can I improve?"
+              multiline
+              rows={4}
+              variant="filled"
+              onChange={handleFeedbackChange}
+            />
+          </Box>
+          <Button type="submit" variant="contained" sx={{ width: "125px", py: 1, borderRadius: "50px", margin: "auto", mb: 1 }}>Submit</Button>
         </Box>
-
-        {/* Feedback */}
-        <Box
-          sx={{
-            '& .MuiTextField-root': { width: '100%'},
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <Typography component="legend">Feedback</Typography>
-          <TextField
-            id="filled-multiline-static"
-            label="How can I improve?"
-            multiline
-            rows={4}
-            variant="filled"
-            onChange={handleFeedbackChange}
-          />
-        </Box>
-        <Button type="submit" variant="contained" sx={{ width: "125px", py: 1, borderRadius: "50px", margin: "auto", mb: 1 }}>Submit</Button>
-      </Box>
-    </form>
+      </form>
+    </>
   )
 }
 
