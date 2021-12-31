@@ -87,6 +87,22 @@ const Artpiece = () => {
             </div>
           ))}
         </SwipeableViews>
+
+        <Paper
+          square
+          elevation={0}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            bgcolor: 'background.default',
+            p: 3,
+          }}
+        >
+          <Typography>
+            Art piece description (hardcoded until we change the schemas and db). Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit ullamcorper pulvinar. Vestibulum fermentum tortor id mi.
+          </Typography>
+        </Paper>
+
         <MobileStepper
           variant="progress"
           steps={maxSteps}
