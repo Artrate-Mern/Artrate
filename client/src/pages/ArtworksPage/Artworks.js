@@ -7,7 +7,6 @@ const Artworks = () => {
     <div id="works">
       <Header title="Feed" />
       <Artpiece />
-      <FeedbackForm />
     </div>
   )
 }

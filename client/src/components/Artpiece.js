@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import FeedbackForm from "./FeedbackForm";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -40,80 +41,86 @@ const Artpiece = () => {
 
 
   if (!artPiece) return null;
+
+  let artpieceId = artPiece[activeStep]['_id'];
   
   return(
-    <Box sx={{ maxWidth: 650, flexGrow: 1, margin: "auto", boxShadow: 3, p: 4 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          bgcolor: 'background.default',
-          pl: 3,
-        }}
-      >
-        <Typography>{artPiece[activeStep].title}</Typography>
-      </Paper>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {artPiece.map((step, index) => (
-          <div key={step.title}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 650,
-                  objectFit: "contain",
-                  display: 'block',
-                  maxWidth: 650,
-                  overflow: 'hidden',
-                  width: '100%',
+    <div id="artpiece">
+      <Box sx={{ maxWidth: 650, flexGrow: 1, margin: "auto", boxShadow: 3, p: 4 }}>
+        <Paper
+          square
+          elevation={0}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            height: 50,
+            bgcolor: 'background.default',
+            pl: 3,
+          }}
+        >
+          <Typography>{artPiece[activeStep].title}</Typography>
+        </Paper>
+        <SwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+        >
+          {artPiece.map((step, index) => (
+            <div key={step.title}>
+              {Math.abs(activeStep - index) <= 2 ? (
+                <Box
+                  component="img"
+                  sx={{
+                    height: 650,
+                    objectFit: "contain",
+                    display: 'block',
+                    maxWidth: 650,
+                    overflow: 'hidden',
+                    width: '100%',
 
-                }}
-                src={step.image}
-                alt={step.title}
-              />
-            ) : null}
-          </div>
-        ))}
-      </SwipeableViews>
-      <MobileStepper
-        variant="progress"
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
-    </Box>
+                  }}
+                  src={step.image}
+                  alt={step.title}
+                />
+              ) : null}
+            </div>
+          ))}
+        </SwipeableViews>
+        <MobileStepper
+          variant="progress"
+          steps={maxSteps}
+          position="static"
+          activeStep={activeStep}
+          nextButton={
+            <Button
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+            >
+              Next
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+              Back
+            </Button>
+          }
+        />
+      </Box>
+
+      <FeedbackForm artpieceId={artpieceId} />
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-const FeedbackForm = () => {
+const FeedbackForm = ({ artpieceId }) => {
   const [ratingValue, setRatingValue] = useState(1);
   const [feedbackValue, setFeedbackValue] = useState('');
 
@@ -23,6 +23,7 @@ const FeedbackForm = () => {
 
     console.log(ratingValue);
     console.log(feedbackValue);
+    console.log(artpieceId)
 
     setRatingValue(1);
     setFeedbackValue('');
