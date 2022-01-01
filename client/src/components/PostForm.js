@@ -55,13 +55,13 @@ const PostForm = () => {
 
           <TextField 
             id="outlined-basic" 
-            label="Title" 
+            label="Name" 
             variant="outlined"
             type="text"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Name of art piece"
+            placeholder="Give it a name"
           />
 
           <Box sx={{backgroundColor: "#E2F6FF", p: 3}}>
