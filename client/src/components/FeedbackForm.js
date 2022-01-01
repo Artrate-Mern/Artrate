@@ -72,11 +72,10 @@ const FeedbackForm = ({ artpieceId, artpieceName }) => {
           >
             <Typography component="legend">Feedback</Typography>
             <TextField
-              id="filled-multiline-static"
+              id="outlined-multiline-static"
               label="How can I improve?"
               multiline
               rows={4}
-              variant="filled"
               onChange={handleFeedbackChange}
             />
           </Box>
