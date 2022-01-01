@@ -8,10 +8,12 @@ const storage = multer.diskStorage({
     callback(null, "./client/public/uploads/");
   },
   filename: (req, file, callback) => {
-    callback(null, file.originalname);
+    callback(null, Date.now() + file.originalname);
   },
 });
+
 const upload = multer({ storage: storage });
+
 // Request for all art work
 router.get("/", async (req, res) => {
   try {
@@ -35,6 +37,7 @@ router.get("/", async (req, res) => {
 router.post("/new",upload.single("image"), (req, res) => {
   const newArtwork = new Artwork({
     title: req.body.title,
+    description: req.body.description,
     image: req.file.originalname,
   });
 
