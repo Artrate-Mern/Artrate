@@ -54,7 +54,7 @@ passport.use(
 );
 
 
-// Verifying the JWT
+// FIXME Verifying the JWT
 passport.use(
   new JWTstrategy(
     {
