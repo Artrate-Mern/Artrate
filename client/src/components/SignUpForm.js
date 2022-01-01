@@ -12,21 +12,40 @@ const SignUpForm = () => {
   //   fetch()
   // }
 
-  const registerUser = (e) => {
+  // const registerUser = (e) => {
+  //   e.preventDefault();
+
+  //   const trimmedUsername = username.trim();
+  //   const trimmedEmail = email.trim();
+  //   const trimmedPassword = password.trim();
+
+  //   if (!trimmedUsername | !trimmedEmail | !trimmedPassword) {
+  //     return console.log("Cannot submit empty fields")
+  //   }
+
+  //   console.log(`Username: ${trimmedUsername} | Email: ${trimmedEmail} | Password: ${trimmedPassword}`)
+  //   setUsername("");
+  //   setEmail("");
+  //   setPassword("");
+  // }
+
+  async function registerUser(e) {
     e.preventDefault();
 
-    const trimmedUsername = username.trim();
-    const trimmedEmail = email.trim();
-    const trimmedPassword = password.trim();
+    const response = await fetch("http://localhost:3001/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password
+      })
+    })
 
-    if (!trimmedUsername | !trimmedEmail | !trimmedPassword) {
-      return console.log("Cannot submit empty fields")
-    }
-
-    console.log(`Username: ${trimmedUsername} | Email: ${trimmedEmail} | Password: ${trimmedPassword}`)
-    setUsername("");
-    setEmail("");
-    setPassword("");
+    const data = await response.json();
+    console.log(data)
   }
 
   return (
