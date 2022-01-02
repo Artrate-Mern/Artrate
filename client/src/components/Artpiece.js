@@ -81,7 +81,9 @@ const Artpiece = () => {
                     width: '100%',
 
                   }}
-                  src={step.image}
+
+                  // FIXME  
+                  src={`http://localhost:3001/${step.image}`}
                   alt={step.title}
                 />
               ) : null}
@@ -100,7 +102,7 @@ const Artpiece = () => {
           }}
         >
           <Typography>
-            Art piece description (hardcoded until we change the schemas and db). Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit ullamcorper pulvinar. Vestibulum fermentum tortor id mi.
+            {artPiece[activeStep].description}
           </Typography>
         </Paper>
 
