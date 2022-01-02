@@ -66,7 +66,7 @@ const NavBar = () => {
               }}
             >
               {NavBarData.map((element, idx) => (
-                <MenuItem key={`${element}_${idx}`} onClick={handleCloseNavMenu}>
+                <MenuItem key={element.title} onClick={handleCloseNavMenu}>
                   <Link to={element.path}>
                     {element.icon}
                   </Link>
@@ -86,14 +86,14 @@ const NavBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', flexDirection: "row-reverse"  } }}>
             {NavBarData.map((element, idx) => (
-              <Link to={element.path}>
-              <Button
-                key={element}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', color: "#000" }}
-              >
-                {element.icon}
-              </Button>
+              <Link to={element.path} key={element.title}>
+                <Button
+                  key={"button_" + element.title}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block', color: "#000" }}
+                >
+                  {element.icon}
+                </Button>
               </Link>
             ))}
           </Box>

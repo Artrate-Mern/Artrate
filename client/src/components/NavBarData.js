@@ -4,14 +4,17 @@ import PersonIcon from '@mui/icons-material/Person';
 
 export const NavBarData = [
   {
+    title: "profile",
     path: "/",
     icon: <PersonIcon />
   },
   {
+    title: "post",
     path: "/post",
     icon: <CloudUploadIcon />
   },
   {
+    title: "works",
     path: "/works",
     icon: <HomeIcon />
   }
