@@ -68,7 +68,7 @@ const Artpiece = () => {
           enableMouseEvents
         >
           {artPiece.map((step, index) => (
-            <div key={step.title}>
+            <div key={step._id}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
                   component="img"
@@ -83,7 +83,7 @@ const Artpiece = () => {
                   }}
 
                   // FIXME  
-                  src={`http://localhost:3001/${step.image}`}
+                  src={`./client/public/uploads/${step.image}`}
                   alt={step.title}
                 />
               ) : null}

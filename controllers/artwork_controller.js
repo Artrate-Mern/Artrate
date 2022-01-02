@@ -38,7 +38,7 @@ router.post("/new",upload.single("image"), (req, res) => {
   const newArtwork = new Artwork({
     title: req.body.title,
     description: req.body.description,
-    image: req.file.originalname,
+    image: Date.now() + req.file.originalname,
   });
 
   newArtwork
