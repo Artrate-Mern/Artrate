@@ -47,7 +47,7 @@ const SignUpForm = () => {
   // }
 
   return (
-    <form onSubmit={registerUser}>
+    <form>
       <Box
         sx={{
           "& .MuiTextField-root": { m: 3, width: "40ch", display: 'flex', flexDirection: 'column' },

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -97,7 +98,7 @@ const PostForm = () => {
               helperText="Maximum characters: 300"
             />
 
-            <Button type="submit" variant="contained" sx={{backgroundColor: "#19324B", width: "125px", py: 1, margin: "auto"}}>
+            <Button type="submit" variant="contained" sx={{backgroundColor: "#19324B", width: "125px", py: 1, margin: "auto"}} component={Link} to="/works">
               Post
             </Button>
         

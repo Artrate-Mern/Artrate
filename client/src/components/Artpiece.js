@@ -79,11 +79,10 @@ const Artpiece = () => {
                     maxWidth: 650,
                     overflow: 'hidden',
                     width: '100%',
-
                   }}
 
                   // FIXME  
-                  src={`./client/public/uploads/${step.image}`}
+                  src="/uploads/1641098086318cheatsheet-cachingapicalls.jpeg"
                   alt={step.title}
                 />
               ) : null}
