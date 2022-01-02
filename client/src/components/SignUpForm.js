@@ -8,10 +8,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // async function registerUser() {
-  //   fetch()
-  // }
-
+  // TESTING
   // const registerUser = (e) => {
   //   e.preventDefault();
 
@@ -29,24 +26,25 @@ const SignUpForm = () => {
   //   setPassword("");
   // }
 
-  async function registerUser(e) {
-    e.preventDefault();
+  // JSON WEB TOKENS
+  // async function registerUser(e) {
+  //   e.preventDefault();
 
-    const response = await fetch("http://localhost:3001/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password
-      })
-    })
+  //   const response = await fetch("http://localhost:3001/register", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       username,
+  //       email,
+  //       password
+  //     })
+  //   })
 
-    const data = await response.json();
-    console.log(data)
-  }
+  //   const data = await response.json();
+  //   console.log(data)
+  // }
 
   return (
     <form onSubmit={registerUser}>

@@ -15,11 +15,6 @@ app.use(cors());
 app.use(express.json());
 
 // SECTION Routes
-app.post("/register", (req, res) => {
-  console.log(req.body)
-  res.json({ status: 'ok'})
-})
-
 const artworkRouter = require("./controllers/artwork_controller");
 app.use("/artworks", artworkRouter);
 
