@@ -43,7 +43,7 @@ const Artpiece = () => {
 
   if (!artPiece) return null;
   
-  return(
+  return (
     // <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
     //   <Paper
     //     square
@@ -106,17 +106,17 @@ const Artpiece = () => {
         square
         elevation={0}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
+          display: "flex",
+          alignItems: "center",
           height: 50,
           pl: 2,
-          bgcolor: 'background.default',
+          bgcolor: "background.default",
         }}
       >
         <Typography>{artPiece[activeStep].title}</Typography>
       </Paper>
       <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -128,12 +128,12 @@ const Artpiece = () => {
                 component="img"
                 sx={{
                   height: 255,
-                  display: 'block',
+                  display: "block",
                   maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
+                  overflow: "hidden",
+                  width: "100%",
                 }}
-                src={step.image}
+                src={`/uploads/${step.image}`}
                 alt={step.title}
               />
             ) : null}
@@ -151,7 +151,7 @@ const Artpiece = () => {
             disabled={activeStep === maxSteps - 1}
           >
             Next
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowLeft />
             ) : (
               <KeyboardArrowRight />
@@ -160,7 +160,7 @@ const Artpiece = () => {
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
             ) : (
               <KeyboardArrowLeft />
@@ -170,7 +170,7 @@ const Artpiece = () => {
         }
       />
     </Box>
-  )
+  );
 }
 
 export default Artpiece;

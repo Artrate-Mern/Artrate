@@ -13,7 +13,8 @@ const ArtList = (props) => {
       <div className="Art-list">
         {arts.map((art, index) => (
           <div key={index}>
-            {art.title} | {art.image}
+            {art.title}
+            <img src={`/uploads/${art.image}`} alt="art" />
           </div>
         ))}
       </div>
