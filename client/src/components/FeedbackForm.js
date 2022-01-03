@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 const FeedbackForm = ({ artpieceId, artpieceName }) => {
-  const [ratingValue, setRatingValue] = useState(1);
+  const [ratingValue, setRatingValue] = useState(0);
   const [feedbackValue, setFeedbackValue] = useState('');
 
   const handleFeedbackChange = (event) => {
@@ -25,7 +25,7 @@ const FeedbackForm = ({ artpieceId, artpieceName }) => {
     console.log(feedbackValue);
     console.log(artpieceId)
 
-    setRatingValue(1);
+    setRatingValue(0);
     setFeedbackValue('');
   }
 
@@ -47,9 +47,6 @@ const FeedbackForm = ({ artpieceId, artpieceName }) => {
           {/* Star rating */}
 
           <Box
-            // sx={{
-            //   '& > legend': { mt: 1 },
-            // }}
           >
             <Typography component="legend">Rating</Typography>
             <Rating
@@ -77,6 +74,7 @@ const FeedbackForm = ({ artpieceId, artpieceName }) => {
               multiline
               rows={4}
               onChange={handleFeedbackChange}
+              value={feedbackValue}
             />
           </Box>
           <Button type="submit" variant="contained" sx={{ width: "125px", py: 1, borderRadius: "50px", margin: "auto", mb: 1 }}>Submit</Button>

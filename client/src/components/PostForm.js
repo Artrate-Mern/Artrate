@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from "@mui/material/TextField";
 import Typography from '@mui/material/Typography';
-import FormHelperText from '@mui/material/FormHelperText';
 
 const Input = styled('input')({
   display: 'none',
@@ -45,7 +44,7 @@ const PostForm = () => {
   
   return (
     <div>
-      <form onSubmit={changeOnClick} encType="multipart/form-data">
+      <form onSubmit={changeOnClick} encType="multipart/form-data" component={Link} to="/work">
         <Box sx={{ 
           display: 'grid', 
           gridTemplateColumns: 'minmax(450px, 650px)', 
@@ -98,7 +97,7 @@ const PostForm = () => {
               helperText="Maximum characters: 300"
             />
 
-            <Button type="submit" variant="contained" sx={{backgroundColor: "#19324B", width: "125px", py: 1, margin: "auto"}} component={Link} to="/works">
+            <Button type="submit" variant="contained" sx={{backgroundColor: "#19324B", width: "125px", py: 1, margin: "auto"}}>
               Post
             </Button>
         

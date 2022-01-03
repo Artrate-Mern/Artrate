@@ -82,7 +82,7 @@ const Artpiece = () => {
                   }}
 
                   // FIXME  
-                  src="/uploads/1641098086318cheatsheet-cachingapicalls.jpeg"
+                  src={`/uploads/${step.image}`}
                   alt={step.title}
                 />
               ) : null}
