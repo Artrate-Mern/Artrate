@@ -47,8 +47,8 @@ const Artpiece = () => {
         square
         elevation={0}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
+          display: "flex",
+          alignItems: "center",
           height: 50,
           bgcolor: 'background.default',
           pl: 3,
@@ -74,9 +74,8 @@ const Artpiece = () => {
                   maxWidth: 650,
                   overflow: 'hidden',
                   width: '100%',
-
                 }}
-                src={step.image}
+                src={`/uploads/${step.image}`}
                 alt={step.title}
               />
             ) : null}
@@ -95,7 +94,7 @@ const Artpiece = () => {
             disabled={activeStep === maxSteps - 1}
           >
             Next
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowLeft />
             ) : (
               <KeyboardArrowRight />
@@ -104,7 +103,7 @@ const Artpiece = () => {
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
             ) : (
               <KeyboardArrowLeft />
@@ -114,7 +113,7 @@ const Artpiece = () => {
         }
       />
     </Box>
-  )
+  );
 }
 
 export default Artpiece;

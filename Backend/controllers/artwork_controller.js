@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
 //   }
 // });
 
-router.post("/new",upload.single("image"), (req, res) => {
+router.post("/new", upload.single("image"), (req, res) => {
   const newArtwork = new Artwork({
     title: req.body.title,
     image: req.file.originalname,
