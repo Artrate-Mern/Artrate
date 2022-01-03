@@ -10,6 +10,10 @@ const ArtworkSchema = new Schema(
       type: String, 
       required: [true, 'Please upload an image.'] 
     },
+    description: { 
+      type: String, 
+      maxLength: 300
+    },
   },
   { timestamps: true }
 );
