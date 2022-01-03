@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import FeedbackForm from "./FeedbackForm";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
